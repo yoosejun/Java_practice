@@ -1,29 +1,24 @@
+// Practice #7
 package score;
-
-import java.util.Scanner;
 
 public class score {
 
-   public static void main(String[] args) {
+	public static void main(String[] args) {
+		int score[][] = new int[][] {
+			{90,80,80},{85,85,95},{95,70,75},{80,80,90},{90,75,80}
+		};
 
-      int[] age = new int[10];
-      Scanner input = new Scanner(System.in);
-      int sum =0;
-      float count =0,avg = 0;
-      
-      System.out.println("학생들 점수 입력하시오");
-      for (int i = 0; i < 10; ++i) {
-         age[i] = input.nextInt();
-         for (int j = i; j <=i ; j++) {
-            sum = sum + age[i];
-         }   
-         count++;
-      }
-      avg = sum / count;
-      System.out.println("학생의 성적 (합계 = " + sum + "평균 = " + avg + ")");
+		int sum[] = new int [5];
+		double avg[] = new double [5];
 
-      input.close();
-
-   }
+		for(int i=0;i<score.length;i++) {
+			for(int j=0;j<score[i].length;j++) {
+				sum[i]+=score[i][j];
+			}
+			avg[i]=sum[i]/(float)score[i].length;
+			
+			System.out.printf("ID-%d:  합계=%d,  평균=%.2f\n",i,sum[i],avg[i]);
+		}
+	}
 
 }
